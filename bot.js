@@ -80,7 +80,7 @@ bot.action(/color(\d)/, async ctx => {
 		await ctx.editMessageMedia({type:'photo', media:{source}}, {inline_keyboard:[scores.kb]}) 
 		await ctx.editMessageCaption(scores.scores[0]+':'+scores.scores[1]+'<a href="https://t.me/'+hex_board+'">&#8203;</a>', {parse_mode:'HTML', reply_markup:{inline_keyboard:[scores.kb]}})
 	}catch(err){
-		return ctx.answerCbQuery('Something went wrong', mainKB)
+		return ctx.answerCbQuery('Something went wrong', true)
 	}
 	return ctx.answerCbQuery()
 })
